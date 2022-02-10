@@ -1,6 +1,6 @@
 - 👋 Hi, I’m [@Amazingca](https://twitter.com/Amazingca_)
 - 👀 I’m interested in cross-platform integration.
-- 🌱 I’m currently learning Java, Html, JavaScript, and Lua.
+- 🌱 I’m currently learning CSS, HTML, Java, JavaScript, and Lua.
 
 <!---
 Amazingca/Amazingca is a ✨ special ✨ repository because its `README.md` (this file) appears on your GitHub profile.
