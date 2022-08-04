@@ -147,7 +147,7 @@
 
     function desktopTemplate(link1, link2, link3, imagelink1, imagelink2, imagelink3) {
       return `<div class="flex-row">
-        <button class="button" onclick="goTo('${link1}', true)">
+        <button class="button" onclick="goTo('${link1}', false)">
           <div class="flex-column">
             <div class="flex-row">
               <img src="${imagelink1}" width="50em" height="50em" class="button-image">
@@ -155,7 +155,7 @@
             </div>
           </div>
         </button>
-        <button class="button" onclick="goTo('${link2}', true)">
+        <button class="button" onclick="goTo('${link2}', false)">
           <div class="flex-column">
             <div class="flex-row">
               <img src="${imagelink2}" width="50em" height="50em" class="button-image">
@@ -163,7 +163,7 @@
             </div>
           </div>
         </button>
-        <button class="button" onclick="goTo('${link3}', true)">
+        <button class="button" onclick="goTo('${link3}', false)">
           <div class="flex-column">
             <div class="flex-row">
               <img src="${imagelink3}" width="50em" height="50em" class="button-image">
@@ -176,7 +176,7 @@
 
     function mobileTemplate(link1, link2, imagelink1, imagelink2) {
       return `<div class="flex-row">
-        <button class="button" onclick="goTo('${link1}', true)">
+        <button class="button" onclick="goTo('${link1}', false)">
           <div class="flex-column">
             <div class="flex-row">
               <img src="${imagelink1}" width="50em" height="50em" class="button-image">
@@ -184,7 +184,7 @@
             </div>
           </div>
         </button>
-        <button class="button" onclick="goTo('${link2}', true)">
+        <button class="button" onclick="goTo('${link2}', false)">
           <div class="flex-column">
             <div class="flex-row">
               <img src="${imagelink2}" width="50em" height="50em" class="button-image">
