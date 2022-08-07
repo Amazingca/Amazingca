@@ -30,8 +30,7 @@
         <div class="about">In my spare time I enjoy coding websites, bots, and even a few <a href="https://words.amazingca.dev" target="_blank">games</a>.</div>
         <fieldset class="flex-column">
           <legend class="links-main-title"><h3>Here are some places you can find me on:</h3></legend>
-          <div class="" id="desktop"></div>
-          <div class="off" id="mobile"></div>
+          <div id="links"></div>
         </fieldset>
       </div>
       <br>
@@ -81,8 +80,9 @@
     .button {
       border-width: 0px;
       border-radius: 50em;
-      margin-left: auto;
-      margin-right: auto;
+      margin-left: 0.25em;
+      margin-right: 0.25em;
+      margin-bottom: 1rem;
       height: 3.5em;
 
       font-family: 'Shrikhand', cursive;
@@ -91,6 +91,9 @@
       -webkit-user-select: none;
       -webkit-font-smoothing: antialiased;
       -moz-osx-font-smoothing: grayscale;
+
+      flex-direction: row;
+      justify-content: space-between;
     }
 
     .button:hover {
@@ -126,15 +129,7 @@
     }
   </style>
   <script>
-    if( /Android|webOS|iPhone|iPad|iPod|BlackBerry|IEMobile|Opera Mini/i.test(navigator.userAgent) ) {
-      document.getElementById("desktop").classList.add("off");
-      document.getElementById("mobile").classList.remove("off");
-
-      document.getElementById("mobile").innerHTML = mobileTemplate("https://amazingca.dev","https://amazingca.dev","https://cdn.amazingca.dev/assets/media/photo-pic.png","https://cdn.amazingca.dev/assets/media/photo-pic.png");
-    } else {
-
-      document.getElementById("desktop").innerHTML = desktopTemplate("https://amazingca.dev","https://amazingca.dev","https://amazingca.dev","https://cdn.amazingca.dev/assets/media/photo-pic.png","https://cdn.amazingca.dev/assets/media/photo-pic.png","https://cdn.amazingca.dev/assets/media/photo-pic.png");
-    }
+    document.getElementById("links").innerHTML = template("https://amazingca.dev","https://amazingca.dev","https://amazingca.dev", "my website", "my website", "my website", "https://cdn.amazingca.dev/assets/media/photo-pic.png","https://cdn.amazingca.dev/assets/media/photo-pic.png","https://cdn.amazingca.dev/assets/media/photo-pic.png");
 
     function goTo(link, newWindow) {
       if (newWindow === true) {
@@ -144,54 +139,33 @@
       }
     }
 
-    function desktopTemplate(link1, link2, link3, imagelink1, imagelink2, imagelink3) {
-      return `<div class="flex-row">
-        <button class="button" style="width: auto;" onclick="goTo('${link1}', false)">
+    function template(link1, link2, link3, linkdesc1, linkdesc2, linkdesc3, imagelink1, imagelink2, imagelink3) {
+      return `<div style="flex-wrap: wrap; display: flex; justify-content: space-between;">
+        <button class="button" style="width: auto; flex: 1 0 21%;" onclick="goTo('${link1}', false)">
           <div class="flex-column">
             <div class="flex-row">
               <img src="${imagelink1}" width="50em" height="50em" class="button-image">
-              <label class="amv">my website</label>
+              <label class="amv">${linkdesc1}</label>
             </div>
           </div>
         </button>
-        <button class="button" style="width: auto;" onclick="goTo('${link2}', false)">
+        <button class="button" style="width: auto; flex: 1 0 21%;" onclick="goTo('${link2}', false)">
           <div class="flex-column">
             <div class="flex-row">
               <img src="${imagelink2}" width="50em" height="50em" class="button-image">
-              <label class="amv">my website</label>
+              <label class="amv">${linkdesc2}</label>
             </div>
           </div>
         </button>
-        <button class="button" style="width: auto;" onclick="goTo('${link3}', false)">
+        <button class="button" style="width: auto; flex: 1 0 21%;" onclick="goTo('${link3}', false)">
           <div class="flex-column">
             <div class="flex-row">
               <img src="${imagelink3}" width="50em" height="50em" class="button-image">
-              <label class="amv">my website</label>
+              <label class="amv">${linkdesc3}</label>
             </div>
           </div>
         </button>
-      </div><br>`;
-    }
-
-    function mobileTemplate(link1, link2, imagelink1, imagelink2) {
-      return `<div class="flex-row">
-        <button class="button" style="width: 9em;" onclick="goTo('${link1}', false)">
-          <div class="flex-column">
-            <div class="flex-row">
-              <img src="${imagelink1}" width="50em" height="50em" class="button-image">
-              <label class="amv">my github</label>
-            </div>
-          </div>
-        </button>
-        <button class="button" style="width: 9em;" onclick="goTo('${link2}', false)">
-          <div class="flex-column">
-            <div class="flex-row">
-              <img src="${imagelink2}" width="50em" height="50em" class="button-image">
-              <label class="amv">my twitter</label>
-            </div>
-          </div>
-        </button>
-      </div><br>`;
+      </div>`;
     }
     //Object.keys(directory).length
   </script>
