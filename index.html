@@ -31,7 +31,7 @@
         <div class="about">In my spare time I enjoy coding websites, bots, and even a few <a href="https://words.amazingca.dev" target="_blank">games</a>.</div>
         <fieldset class="flex-column">
           <legend class="links-main-title"><h3>Here are some places you can find me on:</h3></legend>
-          <div id="links"></div>
+          <div id="links"><h4 class="links-main-title">Loading links...</h4></div>
         </fieldset>
       </div>
       <br>
@@ -130,7 +130,28 @@
     }
   </style>
   <script>
-    document.getElementById("links").innerHTML = template("https://amazingca.dev","https://amazingca.dev","https://amazingca.dev", "my website", "my website", "my website", "https://cdn.amazingca.dev/assets/media/photo-pic.png","https://cdn.amazingca.dev/assets/media/photo-pic.png","https://cdn.amazingca.dev/assets/media/photo-pic.png");
+    const directory = {
+      0: ["my twitter", "https://twitter.com/amazingca_", "https://about.twitter.com/content/dam/about-twitter/en/brand-toolkit/brand-download-img-1.jpg"],
+      1: ["my github", "https://github.com/Amazingca", "https://cdn.amazingca.dev/assets/social-icons/GitHub-Mark-64px.png"],
+      2: ["my word game", "https://words.amazingca.dev", "https://cdn.amazingca.dev/assets/social-icons/word-guesser-2.PNG"]
+    }
+
+    var temp = `<div style="flex-wrap: wrap; display: flex; justify-content: space-between;">`;
+
+    for (var i = 0; i < Object.keys(directory).length; i++) {
+      temp = temp + `<button class="button" style="width: auto; flex: 1 0 21%;" onclick="goTo('${directory[i][1]}', false)">
+        <div class="flex-column">
+          <div class="flex-row">
+            <img src="${directory[i][2]}" width="50em" height="50em" class="button-image">
+            <label class="amv">${directory[i][0]}</label>
+          </div>
+        </div>
+      </button>`;
+    }
+
+    temp = temp + `</div>`;
+
+    document.getElementById("links").innerHTML = temp;
 
     function goTo(link, newWindow) {
       if (newWindow === true) {
@@ -139,36 +160,6 @@
         window.location.href = link;
       }
     }
-
-    function template(link1, link2, link3, linkdesc1, linkdesc2, linkdesc3, imagelink1, imagelink2, imagelink3) {
-      return `<div style="flex-wrap: wrap; display: flex; justify-content: space-between;">
-        <button class="button" style="width: auto; flex: 1 0 21%;" onclick="goTo('${link1}', false)">
-          <div class="flex-column">
-            <div class="flex-row">
-              <img src="${imagelink1}" width="50em" height="50em" class="button-image">
-              <label class="amv">${linkdesc1}</label>
-            </div>
-          </div>
-        </button>
-        <button class="button" style="width: auto; flex: 1 0 21%;" onclick="goTo('${link2}', false)">
-          <div class="flex-column">
-            <div class="flex-row">
-              <img src="${imagelink2}" width="50em" height="50em" class="button-image">
-              <label class="amv">${linkdesc2}</label>
-            </div>
-          </div>
-        </button>
-        <button class="button" style="width: auto; flex: 1 0 21%;" onclick="goTo('${link3}', false)">
-          <div class="flex-column">
-            <div class="flex-row">
-              <img src="${imagelink3}" width="50em" height="50em" class="button-image">
-              <label class="amv">${linkdesc3}</label>
-            </div>
-          </div>
-        </button>
-      </div>`;
-    }
-    //Object.keys(directory).length
   </script>
   </script>
 </html>
