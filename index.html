@@ -105,7 +105,6 @@
     }
 
     .button-image {
-      border-radius: 50%;
       margin-top: auto;
       margin-bottom: auto;
       -webkit-user-drag: none;
@@ -131,35 +130,100 @@
   </style>
   <script>
     const directory = {
-      0: ["my twitter", "https://twitter.com/amazingca_", "https://about.twitter.com/content/dam/about-twitter/en/brand-toolkit/brand-download-img-1.jpg"],
-      1: ["my github", "https://github.com/Amazingca", "https://cdn.amazingca.dev/assets/social-icons/GitHub-Mark-64px.png"],
-      2: ["my word game", "https://words.amazingca.dev", "https://cdn.amazingca.dev/assets/social-icons/word-guesser-2.PNG"]
+      0: ["my twitter", false, "https://twitter.com/amazingca_", false, "https://about.twitter.com/content/dam/about-twitter/en/brand-toolkit/brand-download-img-1.jpg"],
+      1: ["my github", false, "https://github.com/Amazingca", true, "https://cdn.amazingca.dev/assets/social-icons/GitHub-Mark-64px.png", "https://cdn.amazingca.dev/assets/social-icons/GitHub-Mark-Light-64px.png"],
+      2: ["my word game", false, "https://words.amazingca.dev", false, "https://cdn.amazingca.dev/assets/social-icons/word-guesser-2.PNG"],
+      3: ["my discord", true, "amazingca#3060", true, "https://cdn.amazingca.dev/assets/social-icons/icon_clyde_black_RGB.png", "https://cdn.amazingca.dev/assets/social-icons/icon_clyde_white_RGB.png"]
     }
 
     var temp = `<div style="flex-wrap: wrap; display: flex; justify-content: space-between;">`;
 
     for (var i = 0; i < Object.keys(directory).length; i++) {
-      temp = temp + `<button class="button" style="width: auto; flex: 1 0 21%;" onclick="goTo('${directory[i][1]}', false)">
-        <div class="flex-column">
-          <div class="flex-row">
-            <img src="${directory[i][2]}" width="50em" height="50em" class="button-image">
-            <label class="amv">${directory[i][0]}</label>
-          </div>
-        </div>
-      </button>`;
+
+      if (directory[i][1] === false) {
+
+        if (directory[i][3] === false) {
+
+          temp = temp + `<button class="button" style="width: auto; flex: 1 0 21%;" onclick="clickEvent(true, [${i}, false])">
+            <div class="flex-column">
+              <div class="flex-row">
+                <img src="${directory[i][4]}" width="50em" height="50em" style="border-radius: 50%;" class="button-image">
+                <label class="amv">${directory[i][0]}</label>
+              </div>
+            </div>
+          </button>`;
+        } else {
+
+          temp = temp + `<button class="button" style="width: auto; flex: 1 0 21%;" onmouseenter="enter(${i})" onmouseleave="exit(${i})" onclick="clickEvent(true, [${i}, false])">
+            <div class="flex-column">
+              <div class="flex-row">
+                <img src="${directory[i][4]}" width="50em" height="50em" style="border-radius: 50%;" class="button-image" id="bp${i}-1">
+                <img src="${directory[i][5]}" width="50em" height="50em" style="border-radius: 50%;" class="button-image off" id="bp${i}-2">
+                <label class="amv" id="bl${i}">${directory[i][0]}</label>
+              </div>
+            </div>
+          </button>`;
+        }
+      } else {
+
+        if (directory[i][3] === false) {
+
+          temp = temp + `<button class="button" style="width: auto; flex: 1 0 21%;" onmouseenter="enter(${i})" onmouseleave="exit(${i})" onclick="clickEvent(false, [${i}])">
+            <div class="flex-column">
+              <div class="flex-row">
+                <img src="${directory[i][4]}" width="50em" height="50em" style="border-radius: 50%;" class="button-image">
+                <label class="amv">${directory[i][0]}</label>
+              </div>
+            </div>
+          </button>`;
+        } else {
+
+          temp = temp + `<button class="button" style="width: auto; flex: 1 0 21%;" onmouseenter="enter(${i})" onmouseleave="exit(${i})" onclick="clickEvent(false, [${i}])">
+            <div class="flex-column">
+              <div class="flex-row">
+                <img src="${directory[i][4]}" width="40em" height="40em" style="margin-left: 0.5em;" class="button-image" id="bp${i}-1">
+                <img src="${directory[i][5]}" width="40em" height="40em" style="margin-left: 0.5em;" class="button-image off" id="bp${i}-2">
+                <label class="amv" id="bl${i}">${directory[i][0]}</label>
+              </div>
+            </div>
+          </button>`;
+        }
+      }
     }
 
     temp = temp + `</div>`;
 
     document.getElementById("links").innerHTML = temp;
 
-    function goTo(link, newWindow) {
-      if (newWindow === true) {
-        window.open(link).focus();
+    function enter(i) {
+      document.getElementById(`bp${i}-1`).classList.add("off");
+      document.getElementById(`bp${i}-2`).classList.remove("off");
+    }
+
+    function exit(i) {
+      document.getElementById(`bp${i}-1`).classList.remove("off");
+      document.getElementById(`bp${i}-2`).classList.add("off");
+    }
+
+    function clickEvent(redir, p) {
+
+      if (redir === true) {
+
+        if (p[1] === true) {
+          window.open(directory[p[0]][2]).focus();
+        } else {
+          window.location.href = directory[p[0]][2];
+        }
       } else {
-        window.location.href = link;
+
+        navigator.clipboard.writeText(directory[p[0]][2]);
+        document.getElementById(`bl${p[0]}`).textContent = "copied!";
+
+        setTimeout(function(){
+
+          document.getElementById(`bl${p[0]}`).textContent = directory[p[0]][0];
+        }, 1000);
       }
     }
-  </script>
   </script>
 </html>
