@@ -130,10 +130,14 @@
   </style>
   <script>
     const directory = {
-      0: ["my twitter", false, "https://twitter.com/amazingca_", false, "https://about.twitter.com/content/dam/about-twitter/en/brand-toolkit/brand-download-img-1.jpg"],
-      1: ["my github", false, "https://github.com/Amazingca", true, "https://cdn.amazingca.dev/assets/social-icons/GitHub-Mark-64px.png", "https://cdn.amazingca.dev/assets/social-icons/GitHub-Mark-Light-64px.png"],
-      2: ["my word game", false, "https://words.amazingca.dev", false, "https://cdn.amazingca.dev/assets/social-icons/word-guesser-2.PNG"],
-      3: ["my discord", true, "amazingca#3060", true, "https://cdn.amazingca.dev/assets/social-icons/icon_clyde_black_RGB.png", "https://cdn.amazingca.dev/assets/social-icons/icon_clyde_white_RGB.png"]
+      0: ["my twitter", false, "https://twitter.com/amazingca_", false, "https://about.twitter.com/content/dam/about-twitter/en/brand-toolkit/brand-download-img-1.jpg", false],
+      1: ["my github", false, "https://github.com/Amazingca", true, "https://cdn.amazingca.dev/assets/social-icons/GitHub-Mark-64px.png", "https://cdn.amazingca.dev/assets/social-icons/GitHub-Mark-Light-64px.png", false],
+      2: ["my word game", false, "https://words.amazingca.dev", false, "https://cdn.amazingca.dev/assets/social-icons/word-guesser-2.PNG", false],
+      3: ["my discord", true, "amazingca#3060", true, "https://cdn.amazingca.dev/assets/social-icons/icon_clyde_black_RGB.png", "https://cdn.amazingca.dev/assets/social-icons/icon_clyde_white_RGB.png", true],
+      4: ["my twitch", false, "https://twitch.tv/amazingca_", true, "https://cdn.amazingca.dev/assets/social-icons/TwitchGlitchPurple.png", "https://cdn.amazingca.dev/assets/social-icons/TwitchGlitchWhite.png", true],
+      5: ["my youtube", false, "https://www.youtube.com/channel/UCQYjCqV0JWtj-aWdvWXzlfg", true, "https://cdn.amazingca.dev/assets/social-icons/yt_icon_rgb.png", "https://cdn.amazingca.dev/assets/social-icons/yt_icon_mono_dark.png", true],
+      6: ["my instagram", false, "https://instagram.com/amazingca_", true, "https://cdn.amazingca.dev/assets/social-icons/Instagram_Glyph_Gradient.png", "https://cdn.amazingca.dev/assets/social-icons/Instagram_Glyph_White.png", true],
+      7: ["my vsco", false, "https://vs.co/amazingca", true, "https://cdn.amazingca.dev/assets/social-icons/VSCO_Seal_black.png", "https://cdn.amazingca.dev/assets/social-icons/VSCO_Seal_white.png", false]
     }
 
     var temp = `<div style="flex-wrap: wrap; display: flex; justify-content: space-between;">`;
@@ -154,15 +158,29 @@
           </button>`;
         } else {
 
-          temp = temp + `<button class="button" style="width: auto; flex: 1 0 21%;" onmouseenter="enter(${i})" onmouseleave="exit(${i})" onclick="clickEvent(true, [${i}, false])">
-            <div class="flex-column">
-              <div class="flex-row">
-                <img src="${directory[i][4]}" width="50em" height="50em" style="border-radius: 50%;" class="button-image" id="bp${i}-1">
-                <img src="${directory[i][5]}" width="50em" height="50em" style="border-radius: 50%;" class="button-image off" id="bp${i}-2">
-                <label class="amv" id="bl${i}">${directory[i][0]}</label>
+          if (directory[i][6] === true) {
+
+            temp = temp + `<button class="button" style="width: auto; flex: 1 0 21%;" onmouseenter="enter(${i})" onmouseleave="exit(${i})" onclick="clickEvent(true, [${i}, false])">
+              <div class="flex-column">
+                <div class="flex-row">
+                  <img src="${directory[i][4]}" width="50em" height="50em" style="margin-left: 0.5em;" class="button-image" id="bp${i}-1">
+                  <img src="${directory[i][5]}" width="50em" height="50em" style="margin-left: 0.5em;" class="button-image off" id="bp${i}-2">
+                  <label class="amv" id="bl${i}">${directory[i][0]}</label>
+                </div>
               </div>
-            </div>
-          </button>`;
+            </button>`;
+          } else {
+
+            temp = temp + `<button class="button" style="width: auto; flex: 1 0 21%;" onmouseenter="enter(${i})" onmouseleave="exit(${i})" onclick="clickEvent(true, [${i}, false])">
+              <div class="flex-column">
+                <div class="flex-row">
+                  <img src="${directory[i][4]}" width="50em" height="50em" class="button-image" id="bp${i}-1">
+                  <img src="${directory[i][5]}" width="50em" height="50em" class="button-image off" id="bp${i}-2">
+                  <label class="amv" id="bl${i}">${directory[i][0]}</label>
+                </div>
+              </div>
+            </button>`;
+          }
         }
       } else {
 
@@ -178,15 +196,29 @@
           </button>`;
         } else {
 
-          temp = temp + `<button class="button" style="width: auto; flex: 1 0 21%;" onmouseenter="enter(${i})" onmouseleave="exit(${i})" onclick="clickEvent(false, [${i}])">
-            <div class="flex-column">
-              <div class="flex-row">
-                <img src="${directory[i][4]}" width="40em" height="40em" style="margin-left: 0.5em;" class="button-image" id="bp${i}-1">
-                <img src="${directory[i][5]}" width="40em" height="40em" style="margin-left: 0.5em;" class="button-image off" id="bp${i}-2">
-                <label class="amv" id="bl${i}">${directory[i][0]}</label>
+          if (directory[i][6] === true) {
+
+            temp = temp + `<button class="button" style="width: auto; flex: 1 0 21%;" onmouseenter="enter(${i})" onmouseleave="exit(${i})" onclick="clickEvent(false, [${i}])">
+              <div class="flex-column">
+                <div class="flex-row">
+                  <img src="${directory[i][4]}" width="40em" height="40em" style="margin-left: 0.5em;" class="button-image" id="bp${i}-1">
+                  <img src="${directory[i][5]}" width="40em" height="40em" style="margin-left: 0.5em;" class="button-image off" id="bp${i}-2">
+                  <label class="amv" id="bl${i}">${directory[i][0]}</label>
+                </div>
               </div>
-            </div>
-          </button>`;
+            </button>`;
+          } else {
+
+            temp = temp + `<button class="button" style="width: auto; flex: 1 0 21%;" onmouseenter="enter(${i})" onmouseleave="exit(${i})" onclick="clickEvent(false, [${i}])">
+              <div class="flex-column">
+                <div class="flex-row">
+                  <img src="${directory[i][4]}" width="40em" height="40em" class="button-image" id="bp${i}-1">
+                  <img src="${directory[i][5]}" width="40em" height="40em" class="button-image off" id="bp${i}-2">
+                  <label class="amv" id="bl${i}">${directory[i][0]}</label>
+                </div>
+              </div>
+            </button>`;
+          }
         }
       }
     }
