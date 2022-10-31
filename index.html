@@ -92,6 +92,7 @@
       font-family: 'Shrikhand', cursive;
       letter-spacing: 0.03em;
       font-size: 17px;
+      color: black;
       background-color: #eeeeee;
       -webkit-user-select: none;
       -webkit-font-smoothing: antialiased;
@@ -103,7 +104,7 @@
 
     .button:hover {
       animation: move 10s linear infinite alternate;
-      background: linear-gradient(315deg, #33c62b, #b12bc6);
+      background: linear-gradient(135deg, #2543a4, #2563a4, #2593a4, #25a482, #25a471, #25a441);
       background-size: 400% 400%;
       color: white;
     }
@@ -126,10 +127,21 @@
       margin-right: 0.5em;
     }
 
+    fieldset {
+      border-width: 3px;
+      border-radius: 10px;
+      border-color: black;
+    }
+
     @keyframes move {
       0% { background-position: 7% 0%; }
       50% { background-position: 94% 100%; }
       100% { background-position: 7% 0%; }
+    }
+
+    ::selection {
+      background: black;
+      color: white;
     }
 
     .off {
