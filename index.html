@@ -4,7 +4,7 @@
     <title>Amazingca</title>
     <link rel="icon" href="https://cdn.amazingca.dev/assets/media/thumbnail.ico">
     <meta name="theme-color" content="#ffffff" media="(prefers-color-scheme: light)">
-    <meta name="theme-color" content="#323232" media="(prefers-color-scheme: dark)">
+    <meta name="theme-color" content="#" media="(prefers-color-scheme: dark)">
     <meta name="viewport" content="width=device-width, initial-scale: 1, maximum-scale=1">
     <meta property="og:image" content="https://cdn.amazingca.dev/assets/media/photo-pic-reduced.png">
     <meta property="description" content="About Amazingca">
@@ -255,6 +255,15 @@
           document.getElementById(`bl${p[0]}`).textContent = directory[p[0]][0];
         }, 1000);
       }
+    }
+
+    if (window.matchMedia && window.matchMedia('(prefers-color-scheme: dark)').matches) {
+      
+      const meta = document.createElement('meta');
+      meta.name = "color-scheme";
+      meta.content = "dark";
+
+      document.getElementsByTagName('head')[0].appendChild(meta);
     }
   </script>
 </html>
