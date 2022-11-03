@@ -1,4 +1,4 @@
-- 👋 Hi, I’m [@Amazingca](https://twitter.com/3bNeo)
+- 👋 Hi, I’m [@Amazingca](https://twitter.com/thatamazingca)
 - 👀 I’m interested in cross-platform integration.
 - 🌱 I’m currently learning HTML, CSS, JavaScript, and Java.
 
