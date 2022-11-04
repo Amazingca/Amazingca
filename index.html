@@ -196,7 +196,7 @@
 
           if (directory[i][3] === false) {
 
-            temp = temp + `<button class="button" style="width: auto; flex: 1 0 21%;" onmouseenter="enter(${i})" onmouseleave="exit(${i})" onclick="clickEvent(false, [${i}, false])">
+            temp = temp + `<button class="button" style="width: auto; flex: 1 0 21%;" onmouseenter="enter(${i})" onmouseleave="exit(${i})" onclick="clickEvent(true, [${i}, false])">
               <div class="flex-column">
                 <div class="flex-row">
                   <img src="${directory[i][4]}" width="50em" height="50em" style="border-radius: 50%;" class="button-image desktop">
@@ -206,7 +206,7 @@
             </button>`;
           } else {
 
-            temp = temp + `<button class="button" style="width: auto; flex: 1 0 21%;" onmouseenter="enter(${i})" onmouseleave="exit(${i})" onclick="clickEvent(false, [${i}, false])">
+            temp = temp + `<button class="button" style="width: auto; flex: 1 0 21%;" onmouseenter="enter(${i})" onmouseleave="exit(${i})" onclick="clickEvent(true, [${i}, false])">
               <div class="flex-column">
                 <div class="flex-row">
                   <img src="${directory[i][4]}" width="50em" height="50em" class="button-image desktop" id="bp${i}-1">
