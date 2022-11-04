@@ -160,7 +160,15 @@
       7: ["my vsco", false, "https://vsco.co/amazingca", true, "https://cdn.amazingca.dev/assets/social-icons/VSCO_Seal_black.png", "https://cdn.amazingca.dev/assets/social-icons/VSCO_Seal_white.png"]
     }
 
-    var temp = `<div style="flex-wrap: wrap; display: flex; justify-content: space-between;">`;
+    var temp = `<div style="flex-wrap: wrap; display: flex; justify-content: space-between;">
+                  <button class="button" style="width: auto; flex: 1 0 21%;" onclick="window.open('https://mstdn.social/@amazingca').focus()">
+                    <div class="flex-column">
+                      <div class="flex-row">
+                        <img src="https://cdn.amazingca.dev/assets/media/favicon.png" width="50em" height="50em" style="border-radius: 50%;" class="button-image desktop">
+                        <a rel="me" href="https://mstdn.social/@amazingca">My Mastodon</a>
+                      </div>
+                    </div>
+                  </button>`;
 
     for (var i = 0; i < Object.keys(directory).length; i++) {
 
