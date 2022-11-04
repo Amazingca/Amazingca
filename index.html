@@ -161,11 +161,12 @@
     }
 
     var temp = `<div style="flex-wrap: wrap; display: flex; justify-content: space-between;">
-                  <button class="button" style="width: auto; flex: 1 0 21%;" onclick="window.open('https://mstdn.social/@amazingca').focus()">
+                  <button class="button" style="width: auto; flex: 1 0 21%;" onmouseenter="" onmouseleave="exit('mastodon')" onclick="window.open('https://mstdn.social/@amazingca').focus()">
                     <div class="flex-column">
                       <div class="flex-row">
-                        <img src="https://cdn.amazingca.dev/assets/media/favicon.png" width="50em" height="50em" style="border-radius: 50%;" class="button-image desktop">
-                        <a rel="me" href="https://mstdn.social/@amazingca" class="amv" style="color: inherit; text-decoration: none;">My Mastodon</a>
+                        <img src="https://cdn.amazingca.dev/assets/social-icons/mastodon-color.png" width="50em" height="50em" style="border-radius: 50%;" class="button-image desktop" id="mastodon-1">
+                        <img src="https://cdn.amazingca.dev/assets/social-icons/mastodon-light.png" width="50em" height="50em" style="border-radius: 50%;" class="button-image desktop off" id="mastodon-2">
+                        <a rel="me" href="https://mstdn.social/@amazingca" class="amv" style="color: inherit; text-decoration: none;">my mastodon</a>
                       </div>
                     </div>
                   </button>`;
@@ -235,13 +236,29 @@
     }
 
     function enter(i) {
-      document.getElementById(`bp${i}-1`).classList.add("off");
-      document.getElementById(`bp${i}-2`).classList.remove("off");
+      
+      if (Number.isInteger(i)) {
+        
+        document.getElementById(`bp${i}-1`).classList.add("off");
+        document.getElementById(`bp${i}-2`).classList.remove("off");
+      } else {
+        
+        document.getElementById(`${i}-1`).classList.add("off");
+        document.getElementById(`${i}-2`).classList.remove("off");
+      }
     }
 
     function exit(i) {
-      document.getElementById(`bp${i}-1`).classList.remove("off");
-      document.getElementById(`bp${i}-2`).classList.add("off");
+      
+      if (Number.isInteger(i)) {
+      
+        document.getElementById(`bp${i}-1`).classList.remove("off");
+        document.getElementById(`bp${i}-2`).classList.add("off");
+      } else {
+        
+        document.getElementById(`${i}-1`).classList.remove("off");
+        document.getElementById(`${i}-2`).classList.add("off");
+      }
     }
 
     function clickEvent(redir, p) {
