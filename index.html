@@ -196,26 +196,28 @@
 
           if (directory[i][3] === false) {
 
-            temp = temp + `<button class="button" style="width: auto; flex: 1 0 21%;" onmouseenter="enter(${i})" onmouseleave="exit(${i})" onclick="clickEvent(true, [${i}, false])">
-              <div class="flex-column">
-                <div class="flex-row">
-                  <img src="${directory[i][4]}" width="50em" height="50em" style="border-radius: 50%;" class="button-image desktop">
-                  <!--<a rel="me" href="${directory[i][2]}" class="amv" style="color: inherit; text-decoration: none;" id="bl${i}">${directory[i][0]}</a>-->
-                  <a rel="me" href="${directory[i][2]}">${directory[i][0]}</a>
+            temp = temp + `<button class="button" style="width: auto; flex: 1 0 21%;" onmouseenter="enter(${i})" onmouseleave="exit(${i})">
+              <a href="${directory[i][2]}">
+                <div class="flex-column">
+                  <div class="flex-row">
+                    <img src="${directory[i][4]}" width="50em" height="50em" style="border-radius: 50%;" class="button-image desktop">
+                    <label rel="me" class="amv" style="color: inherit; text-decoration: none;">${directory[i][0]}</a>
+                  </div>
                 </div>
-              </div>
+              </a>
             </button>`;
           } else {
 
-            temp = temp + `<button class="button" style="width: auto; flex: 1 0 21%;" onmouseenter="enter(${i})" onmouseleave="exit(${i})" onclick="clickEvent(true, [${i}, false])">
-              <div class="flex-column">
-                <div class="flex-row">
-                  <img src="${directory[i][4]}" width="50em" height="50em" class="button-image desktop" id="bp${i}-1">
-                  <img src="${directory[i][5]}" width="50em" height="50em" class="button-image desktop off" id="bp${i}-2">
-                  <!--<a rel="me" href="${directory[i][2]}" class="amv" style="color: inherit; text-decoration: none;" id="bl${i}">${directory[i][0]}</a>-->
-                  <a rel="me" href="${directory[i][2]}">${directory[i][0]}</a>
+            temp = temp + `<button class="button" style="width: auto; flex: 1 0 21%;" onmouseenter="enter(${i})" onmouseleave="exit(${i})">
+              <a href="${directory[i][2]}">
+                <div class="flex-column">
+                  <div class="flex-row">
+                    <img src="${directory[i][4]}" width="50em" height="50em" class="button-image desktop" id="bp${i}-1">
+                    <img src="${directory[i][5]}" width="50em" height="50em" class="button-image desktop off" id="bp${i}-2">
+                    <label rel="me" class="amv" style="color: inherit; text-decoration: none;">${directory[i][0]}</a>
+                  </div>
                 </div>
-              </div>
+              </a>
             </button>`;
           }
         }
