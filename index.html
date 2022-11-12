@@ -182,12 +182,12 @@
         } else {
 
             temp = temp + `<button class="button" style="width: auto; flex: 1 0 21%;" onmouseenter="enter(${i})" onmouseleave="exit(${i})">
-              <a rel="me" href="${directory[i][2]}">
+              <a rel="me" href="${directory[i][2]}" style="color: inherit; text-decoration: none;">
                 <div class="flex-column">
                   <div class="flex-row">
                     <img src="${directory[i][3]}" width="50em" height="50em" class="button-image desktop" id="bp${i}-1">
                     <img src="${directory[i][4]}" width="50em" height="50em" class="button-image desktop off" id="bp${i}-2">
-                    <label class="amv" style="color: inherit; text-decoration: none;">${directory[i][0]}</label>
+                    <label class="amv">${directory[i][0]}</label>
                   </div>
                 </div>
               </a>
