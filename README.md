@@ -1,4 +1,4 @@
-- 👋 Hi, I’m [@Amazingca](https://twitter.com/thatamazingca)
+- 👋 Hi, I’m [@Amazingca](https://mastodon.social/@amazingca)
 - 👀 I’m interested in cross-platform integration.
 - 🌱 I’m currently learning HTML, CSS, JavaScript, and Java.
 
