@@ -1,6 +1,6 @@
 - 👋 Hi, I’m [@Amazingca](https://mastodon.social/@amazingca)
 - 👀 I’m interested in cross-platform integration.
-- 🌱 I’m currently learning HTML, CSS, JavaScript, and Java.
+- 🌱 I’m currently learning JavaScript, CSS, HTML, and Java.
 
 <!---
 Amazingca/Amazingca is a ✨ special ✨ repository because its `README.md` (this file) appears on your GitHub profile.
