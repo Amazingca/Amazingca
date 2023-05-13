@@ -1,4 +1,4 @@
-- 👋 Hi, I’m [@Amazingca](https://mastodon.social/@amazingca)
+- 👋 Hi, I’m [@Amazingca](https://blue.amazingca.dev/?username=caleb.bsky.social)
 - 👀 I’m interested in cross-platform integration.
 - 🌱 I’m currently learning JavaScript, CSS, HTML, and Java.
 
