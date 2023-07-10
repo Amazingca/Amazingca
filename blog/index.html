@@ -1,0 +1,122 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <title>Amazingca's Blog</title>
+        <meta name="viewport" content="width=device-width, initial-scale: 1, maximum-scale=1">
+    </head>
+    <body>
+        <content>
+            <h1>Amazingca's Blog</h1>
+            <h2>For tech and everything in between.</h2>
+            <br><br>
+            <posts-block>
+                <post-item>
+                    <h3>Post Title</h3>
+                    <h4>Some description regarding this post.</h4>
+                </post-item>
+                <post-item>
+                    <h3>Post Title</h3>
+                    <h4>Some description regarding this post.</h4>
+                </post-item>
+                <post-item>
+                    <h3>Post Title</h3>
+                    <h4>Some description regarding this post.</h4>
+                </post-item>
+                <post-filler></post-filler>
+            </posts-block>
+        </content>
+    </body>
+    <style>
+        @font-face {
+            font-family: 'Mona Sans';
+            src:
+                url('https://cdn.glitch.global/c7535eed-09c9-422b-a9c9-01a0232a2d4c/Mona-Sans.woff2') format('woff2 supports variations'),
+                url('https://cdn.glitch.global/c7535eed-09c9-422b-a9c9-01a0232a2d4c/Mona-Sans.woff2') format('woff2-variations');
+            font-weight: 200 900;
+            font-stretch: 75% 125%;
+        }
+        h1, h2, h3, h4 {
+            font-family: "Mona Sans";
+        }
+        h1 {
+            font-size: 2.5em;
+            font-weight: 900 !important;
+            color: #222;
+
+            margin: 0px;
+        }
+        h2 {
+            color: #888;
+
+            margin: 0px;
+        }
+        h3 {
+            font-size: 1.5em;
+            font-weight: 800 !important;
+            color: #222;
+
+            margin: 0px;
+        }
+        h4 {
+            color: #888;
+
+            margin: 0px;
+        }
+        content {
+            margin-top: 5rem;
+            width: 1000px;
+        }
+        posts-block {
+            flex-wrap: wrap;
+            display: flex;
+            gap: 1rem;
+            align-content: flex-start;
+        }
+        post-item {
+            width: auto;
+            flex: 1 0 25px;
+            display: block;
+            padding: 1rem;
+            background-color: #eee;
+            border-radius: 15px;
+            transition: 0.1s cubic-bezier(.3,.09,.46,1.01) 0s;
+        }
+        post-filler {
+            width: auto;
+            flex: 1 0 187px;
+            padding: 1rem;
+            display: none;
+        }
+        post-item:hover {
+            transform: scale(1.03);
+            box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
+            cursor: pointer;
+        }
+        @media screen and (max-width: 720px) {
+            post-item {
+                flex: 1 0 187px;
+            }
+            post-filler {
+                display: block;
+            }
+        }
+        @media screen and (max-width: 485px) {
+            content {
+                margin-top: 0.25rem;
+            }
+        }
+        body {
+            display: flex;
+            justify-content: center;
+            margin: 1rem;
+        }
+    </style>
+    <script>
+        //const posts = document.getElementsByTagName("post-item");
+
+        //for (var i = 0; i < post.length; i++) {
+
+            //posts[i].addEventListener("mouse")
+        //}
+    </script>
+</html>
