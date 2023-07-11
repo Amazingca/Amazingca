@@ -11,16 +11,12 @@
             <br><br>
             <posts-block>
                 <post-item>
-                    <h3>Post Title</h3>
-                    <h4>Some description regarding this post.</h4>
-                </post-item>
-                <post-item>
-                    <h3>Post Title</h3>
-                    <h4>Some description regarding this post.</h4>
-                </post-item>
-                <post-item>
-                    <h3>Post Title</h3>
-                    <h4>Some description regarding this post.</h4>
+                    <a href="./decentralized-social-networks.html">
+                        <h3>The Importance of a Decentralized Social Protocol</h3>
+                        <h4>And other reasons why Twitter alternatives won't stand the test of time.</h4>
+                        <br>
+                        <h5>July 10, 2023</h5>
+                    </a>
                 </post-item>
                 <post-filler></post-filler>
             </posts-block>
@@ -35,7 +31,7 @@
             font-weight: 200 900;
             font-stretch: 75% 125%;
         }
-        h1, h2, h3, h4 {
+        h1, h2, h3, h4, h5 {
             font-family: "Mona Sans";
         }
         h1 {
@@ -62,6 +58,12 @@
 
             margin: 0px;
         }
+        h5 {
+            color: #222;
+            font-weight: 800 !important;
+
+            margin: 0px;
+        }
         content {
             margin-top: 5rem;
             width: 1000px;
@@ -73,8 +75,8 @@
             align-content: flex-start;
         }
         post-item {
-            width: auto;
-            flex: 1 0 25px;
+            width: 600px;
+            /*flex: 1 0 25px;*/
             display: block;
             padding: 1rem;
             background-color: #eee;
@@ -94,16 +96,20 @@
         }
         @media screen and (max-width: 720px) {
             post-item {
+                width: auto;
                 flex: 1 0 187px;
             }
             post-filler {
-                display: block;
+                display: none;
             }
         }
         @media screen and (max-width: 485px) {
             content {
                 margin-top: 0.25rem;
             }
+        }
+        a {
+            text-decoration: none;
         }
         body {
             display: flex;
