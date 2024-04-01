@@ -1,6 +1,6 @@
 - 👋 Hi, I’m [@Amazingca](https://blue.amazingca.dev/user/caleb.bsky.social)
 - 👀 I’m interested in cross-platform integration.
-- 🌱 I’m currently learning JavaScript, CSS, HTML, Python, and Java.
+- 🌱 I’m currently learning JavaScript, CSS, HTML, Java, and Python.
 
 <!---
 Amazingca/Amazingca is a ✨ special ✨ repository because its `README.md` (this file) appears on your GitHub profile.

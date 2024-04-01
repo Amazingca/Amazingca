@@ -1,0 +1,285 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <title>Amazingca</title>
+    <link rel="icon" type="image/png" href="https://cdn.amazingca.dev/assets/media/circletransoutsmall.png">
+    <meta name="theme-color" content="#ffffff" media="(prefers-color-scheme: light)">
+    <meta name="theme-color" content="#" media="(prefers-color-scheme: dark)">
+    <meta name="viewport" content="width=device-width, initial-scale: 1, maximum-scale=1">
+    <meta http-equiv="Cache-Control" content="no-cache">
+    <meta property="og:image" content="https://cdn.amazingca.dev/assets/media/photo-pic-reduced.png">
+    <meta property="description" content="About Amazingca">
+  </head>
+  <body>
+    <div class="flex-row">
+      <br>
+      <div style="justify-content: space-between; user-select: none; -webkit-user-select: none;">
+        <br>
+        <div class="flex-row">
+          <br>
+          <img src="https://cdn.amazingca.dev/assets/media/circlewhitesmall.png" width="150em" height="150em" id="profile-photo">
+          <br>
+        </div>
+        <br>
+        <div id="profile-tag">@amazingca</div>
+        <br>
+      </div>
+      <br>
+    </div>
+    <div class="flex-row">
+      <br>
+      <div>
+        <div class="about">Hello! My name is Amazingca. I am a content creator currently pursuing computer science.</div>
+        <div class="about">I am experienced in front-end/back-end web development, having also contributed automated bots to several Discord communities.</div>
+        <div class="about">My interests are in JavaScript, Python, Java, and other languages such as HTML & CSS.</div>
+        <div class="about">In my spare time I enjoy coding websites, bots, and even a few <a href="https://words.amazingca.dev" target="_blank" style="color: inherit;">games</a>.</div>
+        <fieldset style="max-width: 1100px;" class="flex-column">
+          <legend class="links-main-title"><h3>Here are some places you can find me on:</h3></legend>
+          <div id="links">
+            <h4 class="links-main-title">Loading links... In the meantime, here are the links to verify my Mastodon socials:</h4>
+            <div style="flex-wrap: wrap; display: flex; justify-content: space-between;">
+              <button class="button" style="width: auto; flex: 1 0 21%;">
+                <a rel="me" href="https://mastodon.social/@amazingca" style="color: inherit; text-decoration: none;">
+                  <label class="amv">my mastodon</label>
+                </a>
+              </button>
+              <button class="button" style="width: auto; flex: 1 0 21%;">
+                <a rel="me" href="https://mastodon.online/@amazingca" style="color: inherit; text-decoration: none;">
+                  <label class="amv">my mastodon (alt)</label>
+                </a>
+              </button>
+            </div>
+          </div>
+        </fieldset>
+        <div style="display: none;">
+          <br>
+          <div class="about"><iframe src="https://staging.bluewrapper.pages.dev/embed?username=caleb.bsky.social&postid=3jr5ghgli6c25" width="550" height="422" style="border-width: 0px; border-radius: 0.75rem;"></iframe></div>
+        </div>
+      </div>
+      <br>
+    </div>
+  </body>
+  <style>
+    @import url('https://fonts.googleapis.com/css2?family=Shrikhand&display=swap');
+
+    #profile-photo {
+      border-radius: 50%;
+      -webkit-user-drag: none;
+      -webkit-user-select: none;
+    }
+
+    #profile-tag {
+      font-family: 'Shrikhand', cursive;
+      text-align: center;
+      font-size: 2em;
+      letter-spacing: 0.03em;
+      -webkit-user-select: none;
+    }
+
+    .about {
+      text-align: center;
+      font-family: Verdana, sans-serif;
+      line-height: 2em;
+    }
+
+    .links-main-title {
+      text-align: center;
+      font-family: Georgia, serif;
+      line-height: 2em;
+    }
+
+    .flex-row {
+      display: flex;
+      flex-direction: row;
+      justify-content: space-between;
+    }
+
+    .flex-column {
+      display: flex;
+      flex-direction: column;
+      justify-content: space-between;
+    }
+
+    .button {
+      border-width: 0px;
+      border-radius: 50em;
+      margin-left: 0.25em;
+      margin-right: 0.25em;
+      margin-bottom: 1rem;
+      height: 3.5em;
+
+      font-family: 'Shrikhand', cursive;
+      letter-spacing: 0.03em;
+      font-size: 17px;
+      color: black;
+      cursor: pointer;
+      background-color: #eeeeee;
+      -webkit-user-select: none;
+      -webkit-font-smoothing: antialiased;
+      -moz-osx-font-smoothing: grayscale;
+
+      flex-direction: row;
+      justify-content: space-between;
+    }
+
+    .button:hover {
+      animation: move 10s linear infinite alternate;
+      background: linear-gradient(135deg, #2543a4, #2563a4, #2593a4, #25a482, #25a471, #25a441);
+      background-size: 400% 400%;
+      color: white;
+    }
+
+    .button-image {
+      margin-top: auto;
+      margin-bottom: auto;
+      -webkit-user-drag: none;
+      -webkit-user-select: none;
+    }
+
+    .button-image.desktop {
+      margin-left: 0.5em;
+    }
+
+    .amv {
+      margin-top: auto;
+      margin-bottom: auto;
+      margin-left: 0.5em;
+      margin-right: 0.5em;
+      cursor: pointer;
+    }
+
+    fieldset {
+      border-width: 3px;
+      border-radius: 10px;
+      border-color: black;
+    }
+
+    @keyframes move {
+      0% { background-position: 7% 0%; }
+      50% { background-position: 94% 100%; }
+      100% { background-position: 7% 0%; }
+    }
+
+    ::selection {
+      background: black;
+      color: white;
+    }
+
+    .off {
+      display: none;
+    }
+  </style>
+  <script>
+    const directory = {
+      0: ["my bluesky", false, "https://blue.amazingca.dev/user/caleb.bsky.social", "https://cdn.amazingca.dev/assets/social-icons/bsky-color.png", "https://cdn.amazingca.dev/assets/social-icons/bsky-white.png", true],
+      1: ["my github", false, "https://github.com/Amazingca", "https://cdn.amazingca.dev/assets/social-icons/GitHub-Mark-64px.png", "https://cdn.amazingca.dev/assets/social-icons/GitHub-Mark-Light-64px.png", true],
+      2: ["my discord", true, "amazingca", "https://cdn.amazingca.dev/assets/social-icons/icon_clyde_black_RGB.png", "https://cdn.amazingca.dev/assets/social-icons/icon_clyde_white_RGB.png", false],
+      3: ["my nostr", true, "npub1v99czwu5qpphzzq806tu5zn64ha5llq8r8v82jxfkp7v8kttytmqtpqsvc", "https://cdn.amazingca.dev/assets/social-icons/NostrBlack.png", "https://cdn.amazingca.dev/assets/social-icons/NostrWhite.png", false],
+      4: ["my guilded", false, "https://www.guilded.gg/r/zzMlWNWdQR", "https://cdn.amazingca.dev/assets/social-icons/Guilded_Logomark_Black.svg", "https://cdn.amazingca.dev/assets/social-icons/Guilded_Logomark_White.svg", true],
+      5: ["my mastodon", false, "https://mastodon.social/@amazingca", "https://cdn.amazingca.dev/assets/social-icons/mastodon-color.png", "https://cdn.amazingca.dev/assets/social-icons/mastodon-white.png", true],
+      6: ["my youtube", false, "https://www.youtube.com/@theamazingca", "https://cdn.amazingca.dev/assets/social-icons/yt_icon_rgb.png", "https://cdn.amazingca.dev/assets/social-icons/yt_icon_mono_dark.png", true],
+      7: ["my twitch", false, "https://twitch.tv/theamazingca", "https://cdn.amazingca.dev/assets/social-icons/TwitchGlitchPurple.png", "https://cdn.amazingca.dev/assets/social-icons/TwitchGlitchWhite.png", true],
+      8: ["my threads", false, "https://threads.net/@thatamazingca", "https://cdn.amazingca.dev/assets/social-icons/ThreadsBlack.png", "https://cdn.amazingca.dev/assets/social-icons/ThreadsWhite.png", true],
+      9: ["my vsco", false, "https://vsco.co/amazingca", "https://cdn.amazingca.dev/assets/social-icons/VSCO_Seal_black.png", "https://cdn.amazingca.dev/assets/social-icons/VSCO_Seal_white.png", true],
+      10: ["my twitter", false, "https://twitter.com/thatamazingca", "https://cdn.amazingca.dev/assets/social-icons/twitter_logo_blue.png", "https://cdn.amazingca.dev/assets/social-icons/twitter_logo_white.png", true]
+    }
+
+    var temp = `<div style="flex-wrap: wrap; display: flex; justify-content: space-between;">`;
+
+    for (var i = 0; i < Object.keys(directory).length; i++) {
+
+      if (directory[i][1] === false) {
+
+        if (directory[i][5] === false) {
+
+            temp = temp + `<button class="button" style="width: auto; flex: 1 0 21%;" onmouseenter="enter(${i})" onmouseleave="exit(${i})" onclick="clickEvent(true, [${i}, false])">
+              <div class="flex-column">
+                <div class="flex-row">
+                  <img src="${directory[i][3]}" width="50em" height="50em" class="button-image desktop" id="bp${i}-1">
+                  <img src="${directory[i][4]}" width="50em" height="50em" class="button-image desktop off" id="bp${i}-2">
+                  <label class="amv" id="bl${i}">${directory[i][0]}</label>
+                </div>
+              </div>
+            </button>`;
+        } else {
+
+            temp = temp + `<button class="button" style="width: auto; flex: 1 0 21%;" onmouseenter="enter(${i})" onmouseleave="exit(${i})">
+              <a rel="me" href="${directory[i][2]}" style="color: inherit; text-decoration: none;">
+                <div class="flex-column">
+                  <div class="flex-row">
+                    <img src="${directory[i][3]}" width="50em" height="50em" class="button-image desktop" id="bp${i}-1">
+                    <img src="${directory[i][4]}" width="50em" height="50em" class="button-image desktop off" id="bp${i}-2">
+                    <label class="amv">${directory[i][0]}</label>
+                  </div>
+                </div>
+              </a>
+            </button>`;
+        }
+      } else {
+
+          temp = temp + `<button class="button" style="width: auto; flex: 1 0 21%;" onmouseenter="enter(${i})" onmouseleave="exit(${i})" onclick="clickEvent(false, [${i}])">
+            <div class="flex-column">
+              <div class="flex-row">
+                <img src="${directory[i][3]}" width="50em" height="50em" class="button-image desktop" id="bp${i}-1">
+                <img src="${directory[i][4]}" width="50em" height="50em" class="button-image desktop off" id="bp${i}-2">
+                <label class="amv" id="bl${i}">${directory[i][0]}</label>
+              </div>
+            </div>
+          </button>`;
+      }
+    }
+
+    temp = temp + `</div>`;
+
+    document.getElementById("links").innerHTML = temp;
+
+    if( /Android|webOS|iPhone|iPad|iPod|BlackBerry|IEMobile|Opera Mini/i.test(navigator.userAgent) ) {
+      for (var i = 0; i < document.getElementsByClassName("button-image").length; i++) {
+
+        document.getElementsByClassName("button-image")[i].classList.remove("desktop");
+      }
+    }
+
+    function enter(i) {
+      
+      document.getElementById(`bp${i}-1`).classList.add("off");
+      document.getElementById(`bp${i}-2`).classList.remove("off");
+    }
+
+    function exit(i) {
+      
+        document.getElementById(`bp${i}-1`).classList.remove("off");
+        document.getElementById(`bp${i}-2`).classList.add("off");
+    }
+
+    function clickEvent(redir, p) {
+
+      if (redir === true) {
+
+        if (p[1] === true) {
+          window.open(directory[p[0]][2]).focus();
+        } else {
+          window.location.href = directory[p[0]][2];
+        }
+      } else {
+
+        navigator.clipboard.writeText(directory[p[0]][2]);
+        document.getElementById(`bl${p[0]}`).textContent = "copied!";
+
+        setTimeout(function(){
+
+          document.getElementById(`bl${p[0]}`).textContent = directory[p[0]][0];
+        }, 1000);
+      }
+    }
+
+    if (window.matchMedia && window.matchMedia('(prefers-color-scheme: dark)').matches) {
+      
+      const meta = document.createElement('meta');
+      meta.name = "color-scheme";
+      meta.content = "dark";
+
+      document.getElementsByTagName('head')[0].appendChild(meta);
+    }
+  </script>
+</html>
