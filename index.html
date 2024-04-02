@@ -15,39 +15,43 @@
         <main>
             <side></side>
             <middle>
-                <div></div>
+                <div class="Profile">
+                    <div class="Photo">
+                        <img src="https://cdn.amazingca.dev/assets/media/circlewhitesmall.png" id="profilePhoto">
+                    </div>
+                    <div class="Name" id="profileTitle">
+                        <h1 id="profileNames" />
+                        <h3 id="profileTagline" />
+                    </div>
+                </div>
                 <div>
-                    <div class="Profile">
-                        <div class="Photo">
-                            <img src="https://cdn.amazingca.dev/assets/media/circlewhitesmall.png" id="profilePhoto">
+                    <br>
+                    <div class="Seperation">
+                        <div style="flex: 1 0 50%;">
+                            <div class="about">Hello! My name is Amazingca. I am a content creator currently pursuing computer science.</div>
+                            <br>
+                            <div class="about">I am experienced in front-end/back-end web development, having also contributed automated bots to several Discord communities.</div>
+                            <br>
+                            <div class="about">My interests are in JavaScript, Java, Python, and other languages such as HTML & CSS.</div>
+                            <br>
+                            <div class="about">In my spare time I enjoy coding websites, bots, and even a few <a href="https://words.amazingca.dev" target="_blank" style="color: inherit;">games</a>.</div>
                         </div>
-                        <div class="Name" id="profileTitle">
-                            <h1 id="profileNames" />
-                            <h3 id="profileTagline" />
+                        <div style="margin-inline: 0rem; margin-top: 2rem; padding: 0rem; flex: 1 0 50%;" id="links">
+                            <h4 class="links-main-title">Loading links... In the meantime, here are the links to verify my Mastodon socials:</h4>
+                            <div style="flex-wrap: wrap; display: flex; justify-content: space-between;">
+                                <button class="button" style="width: auto; flex: 1 0 50%;">
+                                <a rel="me" href="https://mastodon.social/@amazingca" style="color: inherit; text-decoration: none;">
+                                    <label class="amv">my mastodon</label>
+                                </a>
+                                </button>
+                                <button class="button" style="width: auto; flex: 1 0 50%;">
+                                <a rel="me" href="https://mastodon.online/@amazingca" style="color: inherit; text-decoration: none;">
+                                    <label class="amv">my mastodon (alt)</label>
+                                </a>
+                                </button>
+                            </div>
                         </div>
                     </div>
-                    <br>
-                    <div class="about">Hello! My name is Amazingca. I am a content creator currently pursuing computer science.</div>
-                    <div class="about">I am experienced in front-end/back-end web development, having also contributed automated bots to several Discord communities.</div>
-                    <div class="about">My interests are in JavaScript, Java, Python, and other languages such as HTML & CSS.</div>
-                    <div class="about">In my spare time I enjoy coding websites, bots, and even a few <a href="https://words.amazingca.dev" target="_blank" style="color: inherit;">games</a>.</div>
-                    <fieldset style="margin-inline: 0rem; margin-top: 2rem; padding: 0rem;" class="flex-column">
-                        <div id="links">
-                        <h4 class="links-main-title">Loading links... In the meantime, here are the links to verify my Mastodon socials:</h4>
-                        <div style="flex-wrap: wrap; display: flex; justify-content: space-between;">
-                            <button class="button" style="width: auto; flex: 1 0 21%;">
-                            <a rel="me" href="https://mastodon.social/@amazingca" style="color: inherit; text-decoration: none;">
-                                <label class="amv">my mastodon</label>
-                            </a>
-                            </button>
-                            <button class="button" style="width: auto; flex: 1 0 21%;">
-                            <a rel="me" href="https://mastodon.online/@amazingca" style="color: inherit; text-decoration: none;">
-                                <label class="amv">my mastodon (alt)</label>
-                            </a>
-                            </button>
-                        </div>
-                        </div>
-                    </fieldset>
                 </div>
                 <div></div>
                 <footer>
@@ -71,6 +75,16 @@
         @font-face {
             font-family: "LMR Slanted";
             src: url("https://cdn.amazingca.dev/assets/fonts/lmromanslant10-regular-webfont.woff");
+        }
+        body {
+            --highlight-background: black;
+            --highlight-text: white;
+
+            margin: 0rem;
+        }
+        body.personal {
+            --highlight-background: rgb(255 215 247);
+            --highlight-text: black;
         }
         h1 {
             font-family: "LMR Bold";
@@ -101,10 +115,14 @@
         }
         .Profile {
             display: flex;
+            flex-direction: column;
             flex-wrap: wrap;
             align-items: center;
             margin-top: 1rem;
             column-gap: 1rem;
+        }
+        .Profile div {
+            text-align: center;
         }
         .Profile .Photo img {
             width: 100px;
@@ -115,6 +133,7 @@
             display: flex;
             flex-direction: column;
             justify-content: center;
+            align-items: center;
         }
         .Profile .Name h1, .Profile .Name h3 {
             margin-block-start: 0em;
@@ -124,7 +143,11 @@
             font-family: Verdana, sans-serif;
             line-height: 2em;
         }
-
+        middle .Seperation {
+            display: flex;
+            align-items: center;
+            gap: 1rem;
+        }
         .links-main-title {
             text-align: center;
             font-family: Georgia, serif;
@@ -134,12 +157,6 @@
         .flex-row {
             display: flex;
             flex-direction: row;
-            justify-content: space-between;
-        }
-
-        .flex-column {
-            display: flex;
-            flex-direction: column;
             justify-content: space-between;
         }
 
@@ -191,10 +208,6 @@
             cursor: pointer;
         }
 
-        fieldset {
-            border-width: 0rem;
-        }
-
         @keyframes move {
             0% { background-position: 7% 0%; }
             50% { background-position: 94% 100%; }
@@ -215,9 +228,6 @@
             width: 36px;
             height: 36px;
         }
-        body {
-            margin: 0rem;
-        }
         @media screen and (max-width: 1450px) {
             main {
                 justify-content: center;
@@ -226,13 +236,18 @@
                 display: none;
             }
         }
+        @media screen and (max-width: 700px) {
+            middle .Seperation {
+                flex-wrap: wrap;
+            }
+        }
         img {
             -webkit-user-drag: none;
             -webkit-user-select: none;
         }
         ::selection {
-            background: black;
-            color: white;
+            background: var(--highlight-background);
+            color: var(--highlight-text);
         }
         .off {
             display: none;
@@ -242,6 +257,7 @@
         if (location.hash == "#personal") {
 
             document.getElementsByTagName("body")[0].style.backgroundColor = "rgb(255 230 250 / 29%)";
+            document.getElementsByTagName("body")[0].classList.add("personal");
             document.getElementsByTagName("meta")[2].content = "rgb(255, 182, 241)";
         }
 
@@ -350,7 +366,7 @@
 
                 if (directory[i][5] === false) {
 
-                    temp = temp + `<button class="button" style="width: auto; flex: 1 0 21%;" onmouseenter="enter(${i})" onmouseleave="exit(${i})" onclick="clickEvent(true, [${i}, false])">
+                    temp = temp + `<button class="button" style="width: auto; flex: 1 0 50%;" onmouseenter="enter(${i})" onmouseleave="exit(${i})" onclick="clickEvent(true, [${i}, false])">
                     <div class="flex-column">
                         <div class="flex-row">
                         <img src="${directory[i][3]}" width="50em" height="50em" class="button-image desktop" id="bp${i}-1">
@@ -361,7 +377,7 @@
                     </button>`;
                 } else {
 
-                    temp = temp + `<button class="button" style="width: auto; flex: 1 0 21%;" onmouseenter="enter(${i})" onmouseleave="exit(${i})">
+                    temp = temp + `<button class="button" style="width: auto; flex: 1 0 50%;" onmouseenter="enter(${i})" onmouseleave="exit(${i})">
                     <a rel="me" href="${directory[i][2]}" style="color: inherit; text-decoration: none;">
                         <div class="flex-column">
                         <div class="flex-row">
@@ -375,7 +391,7 @@
                 }
             } else {
 
-                temp = temp + `<button class="button" style="width: auto; flex: 1 0 21%;" onmouseenter="enter(${i})" onmouseleave="exit(${i})" onclick="clickEvent(false, [${i}])">
+                temp = temp + `<button class="button" style="width: auto; flex: 1 0 50%;" onmouseenter="enter(${i})" onmouseleave="exit(${i})" onclick="clickEvent(false, [${i}])">
                     <div class="flex-column">
                     <div class="flex-row">
                         <img src="${directory[i][3]}" width="50em" height="50em" class="button-image desktop" id="bp${i}-1">
