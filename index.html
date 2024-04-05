@@ -471,7 +471,7 @@
             }
         };
         
-        if (Object.keys(directory).length > 6) {
+        if ((Object.keys(directory).length > 6) && !(/Android|webOS|iPhone|iPad|iPod|BlackBerry|IEMobile|Opera Mini/i.test(navigator.userAgent))) {
 
             const links = document.getElementById("links");
 
