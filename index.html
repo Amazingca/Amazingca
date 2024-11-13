@@ -327,7 +327,7 @@
         document.getElementById("profilePhoto").src = profilePhotos.filter(photo => contentFiltering(photo))[profilePhotos.filter(photo => contentFiltering(photo)).length - 1].uri;
         document.getElementById("profileNames").innerHTML = profileNames.filter(name => contentFiltering(name)).map(item => item.name).join(", ");
         document.getElementById("profileTagline").innerHTML = profileTaglines.filter(tag => contentFiltering(tag)).map(item => item.tag).join(", ");
-        document.getElementById("profileTitle").innerHTML += (profilePronouns.filter(series => contentFiltering(series)).length != 0) ? ("<h3>" + profilePronouns.filter(series => contentFiltering(series)).map(item => item.series).join("–") + "</h3>") : "";
+        document.getElementById("profileTitle").innerHTML += (profilePronouns.filter(series => contentFiltering(series)).length != 0) ? ("<h3>" + profilePronouns.filter(series => contentFiltering(series)).map(item => item.series).join(" – ") + "</h3>") : "";
         document.getElementById("footerEmojis").innerHTML = footerEmojis.filter(item => contentFiltering(item)).map(item => item.element).join("");
 
         var directory = {
