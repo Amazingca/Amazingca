@@ -85,6 +85,20 @@
         body.personal {
             --highlight-background: rgb(255 215 247);
             --highlight-text: black;
+
+            background-color: rgb(255 230 250 / 29%);
+        }
+        @media (prefers-color-scheme: dark) {
+            body {
+                --highlight-background: #ccc;
+                --highlight-text: black;
+
+                background-color: rgb(19 19 19);
+                color: white;
+            }
+            body.personal {
+                background-color: rgb(25 17 23);
+            }
         }
         h1 {
             font-family: "LMR Bold";
@@ -186,6 +200,13 @@
             color: white;
         }
 
+        body.personal .button:hover {
+            background: linear-gradient(135deg, #cc93d6, #d693be, #ab93d6);
+            background: linear-gradient(135deg, #cc93d6, #c48edc, #bc89e1, #b282e8, #ab7eed, #a379f2);
+            background: linear-gradient(135deg, #cc93d6, #c48edc, #bc89e1, #b282e8, #a07cd4, #9161eb); /* Extremely picky with the colors here. Going to leave this one for the time being. */
+            background-size: 400% 400%; /* For some reason we need to redeclare this value or else the animation doesn't work. */
+        }
+
         .button-image {
             margin-top: auto;
             margin-bottom: auto;
@@ -257,7 +278,6 @@
     <script>
         if (location.hash == "#personal") {
 
-            document.getElementsByTagName("body")[0].style.backgroundColor = "rgb(255 230 250 / 29%)";
             document.getElementsByTagName("body")[0].classList.add("personal");
             document.getElementsByTagName("meta")[2].content = "rgb(255, 182, 241)";
         }
