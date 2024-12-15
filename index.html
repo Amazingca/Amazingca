@@ -28,7 +28,7 @@
                     <br>
                     <div class="Seperation">
                         <div style="flex: 1 0 50%;">
-                            <div class="about">Hello! My name is Amazingca. I am a content creator currently pursuing computer science.</div>
+                            <div class="about">Hello! My name is <span id="name"></span>. I am a content creator currently pursuing computer science.</div>
                             <br>
                             <div class="about">I am experienced in front-end/back-end web development, having also contributed automated applications to several Discord communities.</div>
                             <br>
@@ -348,6 +348,7 @@
         document.getElementById("profileNames").innerHTML = profileNames.filter(name => contentFiltering(name)).map(item => item.name).join(", ");
         document.getElementById("profileTagline").innerHTML = profileTaglines.filter(tag => contentFiltering(tag)).map(item => item.tag).join(", ");
         document.getElementById("profileTitle").innerHTML += (profilePronouns.filter(series => contentFiltering(series)).length != 0) ? ("<h3>" + profilePronouns.filter(series => contentFiltering(series)).map(item => item.series).join(" – ") + "</h3>") : "";
+        document.getElementById("name").innerHTML = (profileNames.filter(name => contentFiltering(name)).map(item => item.name).length > 1) ? profileNames[1].name : profileNames[0].name;
         document.getElementById("footerEmojis").innerHTML = footerEmojis.filter(item => contentFiltering(item)).map(item => item.element).join("");
 
         var directory = {
