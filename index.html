@@ -56,7 +56,7 @@
                 <div></div>
                 <footer>
                     <div title="Credits to Twemoji" id="footerEmojis"></div>
-                    <p>&copy; Amazingca 2024</p>
+                    <p id="footerCopyright">&copy; Amazingca</p>
                 </footer>
             </middle>
             <side></side>
@@ -276,6 +276,8 @@
         }
     </style>
     <script>
+        document.getElementById("footerCopyright").innerHTML += " " + new Date().getUTCFullYear();
+        
         if (location.hash == "#personal") {
 
             document.getElementsByTagName("body")[0].classList.add("personal");
@@ -296,7 +298,7 @@
         const profileNames = [
             {
                 name: "Amazingca",
-                showFor: ""
+                showFor: "#"
             },
             {
                 name: "Autumn",
@@ -319,6 +321,10 @@
             {
                 series: "they/them/theirs",
                 showFor: "#personal"
+            },
+            {
+                series: "she/her/hers",
+                showFor: "#personal"
             }
         ];
 
@@ -337,13 +343,13 @@
 
         const contentFiltering = (item) => {
 
-            return (item.showFor.length == 0) || (item.showFor == location.hash);
+            return (item.showFor.length == 0) || (item.showFor == location.hash) || (item.showFor == "#" && location.hash == "");
         };
 
         document.getElementById("profilePhoto").src = profilePhotos.filter(photo => contentFiltering(photo))[profilePhotos.filter(photo => contentFiltering(photo)).length - 1].uri;
         document.getElementById("profileNames").innerHTML = profileNames.filter(name => contentFiltering(name)).map(item => item.name).join(", ");
         document.getElementById("profileTagline").innerHTML = profileTaglines.filter(tag => contentFiltering(tag)).map(item => item.tag).join(", ");
-        document.getElementById("profileTitle").innerHTML += (profilePronouns.filter(series => contentFiltering(series)).length != 0) ? ("<h3>" + profilePronouns.filter(series => contentFiltering(series)).map(item => item.series).join(" – ") + "</h3>") : "";
+        document.getElementById("profileTitle").innerHTML += (profilePronouns.filter(series => contentFiltering(series)).length > 1) ? ("<h3>" + profilePronouns.filter(series => contentFiltering(series)).map(item => item.series.split("/")[0]).join("/") + "</h3>") : (profilePronouns.filter(series => contentFiltering(series)).length > 0) ? ("<h3>" + profilePronouns.filter(series => contentFiltering(series)).map(item => item.series)[0] + "</h3>") : "";
         document.getElementById("name").innerHTML = (profileNames.filter(name => contentFiltering(name)).map(item => item.name).length > 1) ? profileNames[1].name : profileNames[0].name;
         document.getElementById("footerEmojis").innerHTML = footerEmojis.filter(item => contentFiltering(item)).map(item => item.element).join("");
 
