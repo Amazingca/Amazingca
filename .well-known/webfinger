@@ -1,0 +1,7 @@
+{
+	"subject": "acct:contact@amazingca.dev",
+	"links": [
+		"rel": "https://openid.net/specs/connect/1.0/issuer",
+		"href": "https://idp.amazingca.dev"
+	]
+}
